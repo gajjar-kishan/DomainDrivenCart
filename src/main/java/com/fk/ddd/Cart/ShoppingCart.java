@@ -5,6 +5,7 @@ import com.fk.ddd.Cart.repositories.CartRepository;
 import com.fk.ddd.Cart.services.OrderService;
 import com.fk.ddd.Cart.services.PaymentService;
 import com.fk.ddd.Cart.valueobjects.Payment;
+import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 
 /**
  * Created by kishan.gajjar on 15/12/16.
@@ -38,8 +39,9 @@ public class ShoppingCart {
 
         /** place order */
         Order order = orderService.createOrder(sachinCart);
+        System.out.println("Order: " + order);
         Payment payment = paymentService.makePayment("CreditCard", order);
-        System.out.println("Payment done: " + payment);
+        System.out.println("Payment: " + payment);
 
         /** repository */
         User userArun = new User("Arun", "8909770987");
